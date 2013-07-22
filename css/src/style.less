@@ -1,0 +1,223 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *                  Twitter bootstrap                      *
+ * Note: to save some bytes, cherry-pick components needed *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+@import "../../components/bootstrap/less/bootstrap.less";
+@import "../../components/bootstrap/less/responsive.less";
+
+
+/***************
+ * Main styles *
+ ***************/
+
+@semiTransparent: rgba(0,0,0,0.45);
+@blue: #0088F3;
+
+@racingGreen: #01ff04;
+@racingGreenDark: darken(#00cf05, 10);
+
+
+// NAVBAR COLORS
+@navbarText: #fff;
+@navbarBrandColor: #fff;
+@navbarBackgroundHighlight: darken(@white, 50);
+
+@navbarLinkColorActive: #fff;
+@navbarLinkColorHover: #ff0;
+
+@navbarLinkBackgroundActive: @racingGreenDark;
+@navbarLinkColor: #fff;
+
+// Sprite icons path
+// -------------------------
+@iconSpritePath:          "../../img/glyphicons-halflings.png";
+@iconWhiteSpritePath:     "../../img/glyphicons-halflings-white.png";
+
+
+
+html {
+}
+
+body {
+  padding-top: 1.5em;
+  //#gradient > .vertical-three-colors(@racingGreen, @racingGreenDark , 65%, darken(@racingGreenDark, 30));
+  height: 100%;
+  background-image: url(../../img/bg.gif);
+}
+
+.inverse {
+  background-color: #fff;
+  margin-top: 1em;
+  padding: 1em;
+  .border-radius(.4em);
+
+  .span6 img{
+    max-width: 100%;
+  }
+
+  .heading {
+    font-family: 'Bangers';
+    font-weight: 400;
+    text-shadow: 1px 1px 0 #555;
+    padding-left: .35em;
+    padding-top: 2px;
+    font-size: 250%;
+    color: #fff;
+    .border-radius(.2em);
+    background-image: url(../../img/bg2.png);
+    background-repeat: repeat;
+
+    &.big {
+      font-size: 300%;
+      #gradient > .vertical(@racingGreen, @racingGreenDark);
+    }
+    &.alt {
+      font-weight: 400;
+      padding: 0;
+      margin: 1em 0;
+      background-image: none;
+      font-size: 300%;
+      color: @black;
+      font-family: 'Bevan';
+      text-align: center;
+    }
+  }
+
+  .price{
+    position: relative;
+    top: -60px;
+    display: inline-block;
+    float: right;
+
+    font-size: 150%;
+    #gradient > .vertical(@racingGreen, @racingGreenDark);
+    padding: .4em;
+    .border-radius(.25em);
+    .box-shadow(.05em .05em .4em rgba(0,0,0,0.55));
+    color: #fff;
+    .rotate(5deg);
+
+    &.small{
+      #gradient > .vertical(@blue, @blueDark);
+      font-size: 100%;
+      top: 0;
+      left: -1.25em;
+      float: left;
+      .rotate(-5deg);
+    }
+  }
+}
+
+.row-fluid.head{
+  margin-top: 3em;
+}
+
+.header {
+  background-color: @semiTransparent;
+  padding: 1em;
+  .border-radius(.4em);
+
+  .hero-unit {
+    padding: 1em;
+    h1 {
+      font-family: 'Nosifer';
+      font-weight: 400;
+      margin: .1em 0;
+      word-wrap: break-word;
+      word-break: hyphen;
+      color: @racingGreen;
+      text-shadow: .02em .02em .15em darken(@racingGreen, 25),
+                   .02em -.01em .05em rgba(0,0,0,0.9);
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  #header{
+    .hero-unit{
+      h1 {
+        font-size: 225%;
+        padding-top: 3em;
+      }
+    }
+  }
+}
+
+#nyheter {
+
+  #photos {
+    width: 95%;
+    height: 300px;
+    .rotate(-0.9deg);
+    .box-shadow(.25em .25em 1em rgba(0,0,0,0.5));
+
+    background-image: url(../../img/haddaway-flyzone.jpg);
+    background-position: top 20% left 50%;
+    background-size: 130%;
+
+    .transition(background-size 2s);
+
+    &.inview{
+      background-size: 110%;
+    }
+  }
+}
+
+.movie {
+  margin: 0 !important;
+  font-size: 90%;
+  line-height: 1.25;
+  img{
+    margin-right: .5em;
+  }
+  .clearfix();
+}
+
+#footer {
+  font-size: 80%;
+  background-color: @semiTransparent;
+  color: @white;
+  // position: absolute;
+  // bottom: 0px;
+  .border-radius(.4em )
+}
+
+
+// Inner for background effects
+// Gradient is applied to its own element because overflow visible is not honored by IE when filter is present
+.navbar > .navbar-inner {
+  #gradient > .vertical(@racingGreen, @racingGreenDark);
+  // border: 1px solid @navbarBorder;
+  // .border-radius(@baseBorderRadius);
+  // .box-shadow(0 1px 4px rgba(0,0,0,.065));
+
+  // Prevent floats from breaking the navbar
+  .clearfix();
+}
+
+.navbar-inner .brand {
+  color: @white;
+  text-shadow: black 0 1px 3px;
+  &.address {
+    text-transform: uppercase;
+    float: right;
+    font-weight: bold;
+    font-family: Verdana, sans-serif;
+    text-shadow: black 0 0 5px;
+
+  }
+}
+
+
+/* Smaller jumbotron h1 for mobile: */
+
+@media (max-width: 599px) {
+
+  .header .hero-unit h1 {
+    font-size: 32px;
+  }
+
+}
+
+

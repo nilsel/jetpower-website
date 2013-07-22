@@ -1,0 +1,94 @@
+{
+  "project": {
+    "details": {
+      "name": "jetpower-emberapp",
+      "homepage": "",
+      "author": ""
+    },
+    "environment": {
+      "root": "jetpower-emberapp",
+      "abs_path": "/Users/nils/Sites/lab/jetpower-emberapp",
+      "app_path": "/Users/nils/Sites/lab/jetpower-emberapp",
+      "web_root": "",
+      "port": 8081,
+      "host": "localhost",
+      "home_file": "index.*"
+    },
+    "options": {
+      "watch_config": true,
+      "reload": true
+    }
+  },
+  "build": {
+    "js": "js/src/",
+    "min": {
+      "dest": "js/min/output.min.js",
+      "options" : {
+        "beautify": {
+          "width": 80,
+          "beautify": true
+        }
+      }
+    },
+    "dist": "js/dist/",
+    "tmpl": {
+      "src": "js/mustache/",
+      "options": {
+        "prefix": "(function($){ $.extend({'tmpl': ",
+        "postfix": "}); })(jQuery);"
+      }
+    },
+    "lint": {
+      "src": "js/src/*.js"
+    },
+    "docs": {
+      "dest": "js/docs/"
+    },
+    "css": {
+      "src": [
+        "css/src/*.less",
+        "css/src/*.css"
+      ],
+      "dest": "css/dist/style.css"
+    },
+    "test": {
+      "suites": {
+        "nodeunit": {
+          "src": "js/test/nodeunit/**/*.js"
+        }
+      }
+    },
+    "options": {
+      "watch": true,
+      "verbose": false,
+      "testsOnWatch": false,
+      "linting": true,
+      "force": true
+    }
+  },
+  "proxy": {
+    "resources": [{
+      "path": "/twitter/",
+      "pass": "http://search.twitter.com:80/"
+    },{
+      "path": "/static/",
+      "pass": "http://deviant.no:80/files/"
+    }],
+    "options": {
+      "verbose": false,
+      "port": 8080
+    }
+  },
+  "fileserver": {
+    "host": "localhost",
+    "port": 8081,
+    "options": {
+      "verbose": false
+    }
+  },
+  "options": {
+    "verbose": false,
+    "logToFile": false,
+    "scripture": true
+  }
+}
